@@ -1,7 +1,9 @@
 package com.naiomi.address;
 
+import com.naiomi.exceptions.AddressNotFoundException;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.annotation.*;
+import io.micronaut.http.exceptions.HttpStatusException;
 import io.micronaut.validation.Validated;
 import jakarta.inject.Inject;
 
@@ -37,7 +39,7 @@ public class AddressController {
     @Get("/filter/city/{city}")
     public Iterable<Address> getAddressByCity(@PathVariable("city") String city) {
         if (city == null) {
-            throw new HttpClientResponseException("Bad Request", HttpStatus.BAD_REQUEST);
+            throw new HttpStatusException(HttpStatus.BAD_REQUEST, "Bad Request");
         } else {
             return addressService.findByCity(city);
         }

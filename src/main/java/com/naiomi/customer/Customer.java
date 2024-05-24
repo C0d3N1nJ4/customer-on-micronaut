@@ -1,6 +1,7 @@
 package com.naiomi.customer;
 
 import com.naiomi.address.Address;
+import com.naiomi.contact.Contact;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -17,7 +18,6 @@ public class Customer {
     private String status;
 
     @OneToOne
-
     private Address address;
 
     @OneToOne
