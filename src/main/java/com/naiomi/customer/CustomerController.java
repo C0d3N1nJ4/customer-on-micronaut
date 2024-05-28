@@ -1,6 +1,5 @@
 package com.naiomi.customer;
 
-import com.naiomi.exceptions.StatusNotFoundException;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.annotation.*;
