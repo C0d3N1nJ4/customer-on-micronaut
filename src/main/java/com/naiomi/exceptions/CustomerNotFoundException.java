@@ -1,8 +1,8 @@
 package com.naiomi.exceptions;
 
-public class CustomerNotFoundException extends RuntimeException{
+public class CustomerNotFoundException  extends RuntimeException{
 
-    public CustomerNotFoundException(String customerId) {
-        super("Customer with id " + customerId + " not found");
+    public CustomerNotFoundException(Long id){
+        super("Customer not found with id: " + id);
     }
 }

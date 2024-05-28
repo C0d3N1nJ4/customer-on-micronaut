@@ -2,15 +2,11 @@ package com.naiomi.customer;
 
 import io.micronaut.data.annotation.Repository;
 import io.micronaut.data.repository.CrudRepository;
+
 import java.util.List;
-import java.util.Optional;
 
 @Repository
-public interface CustomerRepository extends CrudRepository<Customer, String> {
+public interface CustomerRepository extends CrudRepository<Customer, Long>{
 
-    List<Customer> findAll();
-
-    List<Customer> getCustomerByStatus(String status);
-
-    Optional<Customer> findCustomerByAddress_Id(String addressId);
+    List<Customer> findAllByStatus(String status);
 }

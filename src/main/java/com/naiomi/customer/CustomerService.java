@@ -1,20 +1,19 @@
 package com.naiomi.customer;
 
-import jakarta.inject.Singleton;
+import io.micronaut.core.annotation.NonNull;
 
 import java.util.List;
 import java.util.Optional;
 
-@Singleton
 public interface CustomerService {
 
-    Iterable<Customer> findAll();
+    List<Customer> list();
 
-    boolean existsById(String id);
+    @NonNull Optional<Customer> get(Long id);
 
-    Optional<Customer> findById(String id);
+    Customer create(Customer customer);
 
-    List<Customer> getCustomerByStatus(String status);
+    Customer update(Long id, Customer customer);
 
-    Customer createCustomer(Customer customer);
+    void delete(Long id);
 }
