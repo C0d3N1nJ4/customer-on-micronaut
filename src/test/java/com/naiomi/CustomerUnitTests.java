@@ -30,7 +30,7 @@ public class CustomerUnitTests {
 
         when(customerService.create(inputCustomer)).thenReturn(inputCustomer);
 
-        Customer resultCustomer = customerController.create(inputCustomer);
+        Customer resultCustomer = customerController.createCustomer(inputCustomer);
 
         assertEquals(inputCustomer, resultCustomer);
     }
@@ -43,16 +43,17 @@ public class CustomerUnitTests {
         inputCustomer.setId(1L);
         inputCustomer.setStatus("ACTIVE");
 
+        when(customerService.create(inputCustomer)).thenReturn(inputCustomer);
         when(customerService.update(1L, inputCustomer)).thenReturn(inputCustomer);
 
-        Customer resultCustomer = customerController.update(1L, inputCustomer);
+        Customer resultCustomer = customerController.updateExistingCustomer(1L, inputCustomer);
 
         assertEquals(inputCustomer, resultCustomer);
     }
 
     @Test
     public void testDeleteCustomer() {
-        customerController.delete(1L);
+        customerController.deleteCustomer(1L);
     }
 
 

@@ -1,6 +1,9 @@
 package com.naiomi.customer;
 
 import io.micronaut.core.annotation.NonNull;
+import io.micronaut.http.HttpResponse;
+import io.micronaut.http.HttpStatus;
+import io.micronaut.http.exceptions.HttpStatusException;
 import jakarta.inject.Singleton;
 
 import java.util.List;
@@ -40,7 +43,13 @@ public class CustomerServiceImp implements CustomerService{
         customerRepository.deleteById(id);
     }
 
-    public List<Customer> listByStatus(String status) {
-        return customerRepository.findAllByStatus(status);
+    public HttpResponse<?> listByStatus(String status) {
+        if (status == null) {
+            throw new HttpStatusException(HttpStatus.BAD_REQUEST, "Status parameter is required");
+        } else if (status.equals("ACTIVE") || status.equals("INACTIVE")) {
+            return HttpResponse.ok(customerRepository.findAllByStatus(status));
+        } else {
+            return HttpResponse.notFound(String.format("Status %s not found", status));
+        }
     }
 }
