@@ -1,24 +1,18 @@
-## Micronaut 4.4.2 Documentation
+# Customer Service
+This Micronaut demo project uses the following libraries and frameworks :
 
-- [User Guide](https://docs.micronaut.io/4.4.2/guide/index.html)
-- [API Reference](https://docs.micronaut.io/4.4.2/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/4.4.2/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
+1. Data JPA
+2.  H2 in-memory database
+3. Serde Jackson
+3. Lombok
+3. JUnit 5
+4. Mockito
 
----
+This project aims to implement a simple Micronaut project that exposes an API with various operations to interact with Customer information stored in H2.
 
-- [Micronaut Maven Plugin documentation](https://micronaut-projects.github.io/micronaut-maven-plugin/latest/)
+# Domain model
 
-## Feature micronaut-aot documentation
+The domain model is composed of a Customer entity.
 
-- [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
-
-## Feature serialization-jackson documentation
-
-- [Micronaut Serialization Jackson Core documentation](https://micronaut-projects.github.io/micronaut-serialization/latest/guide/)
-
-## Feature maven-enforcer-plugin documentation
-
-- [https://maven.apache.org/enforcer/maven-enforcer-plugin/](https://maven.apache.org/enforcer/maven-enforcer-plugin/)
 
 
